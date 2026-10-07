@@ -69,8 +69,8 @@ h1 em{font-style:normal;color:var(--accent)}
 .btn b{display:block;line-height:1.1}
 .btn-primary{background:var(--accent);color:var(--accent-ink)}
 .btn-primary:hover{filter:brightness(1.08)}
-.btn-store{background:transparent;border-color:#3a444d;color:var(--text)}
-.btn-store:hover{border-color:var(--accent);color:var(--accent)}
+.btn-soon{background:transparent;border-color:var(--line);color:var(--muted);cursor:default}
+.qr-soon{width:132px;height:132px;border-radius:12px;border:1px dashed var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.8rem;padding:10px}
 .facts{display:flex;flex-wrap:wrap;gap:8px 20px;padding:0;margin:0;list-style:none;color:var(--muted);font-size:.95rem}
 .facts li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:2px;background:var(--accent);margin-right:9px;vertical-align:middle}
 
@@ -138,7 +138,7 @@ footer a:hover{color:var(--text);text-decoration:underline}
         <p class="lede">IronLog is a fast, simple way to log your workouts, track your strength and turn every session into a card worth sharing. No account to create, no ads in the way.</p>
         <div class="cta">
           <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"><span><small>Get it on</small><b>Google Play</b></span></a>
-          <a class="btn btn-store" href="https://apps.apple.com/app/id6820042796" rel="noopener"><span><small>Download on the</small><b>App Store</b></span></a>
+          <span class="btn btn-soon" role="note"><span><small>Coming soon to the</small><b>App Store</b></span></span>
         </div>
         <ul class="facts">
           <li>No account needed</li>
@@ -200,11 +200,11 @@ footer a:hover{color:var(--text);text-decoration:underline}
           </div>
         </div>
         <div class="store">
-          <img class="qr" src="assets/qr-app-store.svg" alt="QR code linking to IronLog on the App Store" width="132" height="132">
+          <div class="qr-soon" role="img" aria-label="QR code for the App Store will appear here once the app is live">QR code appears when the app goes live</div>
           <div>
             <h3>iPhone</h3>
-            <p>Awaiting Apple's approval. The link and code start working as soon as it's live.</p>
-            <a class="btn btn-store" href="https://apps.apple.com/app/id6820042796" rel="noopener"><span><small>Download on the</small><b>App Store</b></span></a>
+            <p>On its way to the App Store.</p>
+            <span class="btn btn-soon" role="note"><span><small>Coming soon to the</small><b>App Store</b></span></span>
           </div>
         </div>
       </div>
