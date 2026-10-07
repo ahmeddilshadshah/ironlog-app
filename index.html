@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://ahmeddilshadshah.github.io/ironlog-app/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"SoftwareApplication","name":"IronLog: Workout Tracker","applicationCategory":"HealthApplication","operatingSystem":"Android, iOS","description":"A fast, simple workout tracker with shareable workout cards. No account, no ads.","url":"https://ahmeddilshadshah.github.io/ironlog-app/"}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"IronLog: Workout Tracker","applicationCategory":"HealthApplication","operatingSystem":"Android, iOS","description":"A fast, simple workout tracker with shareable workout cards. No account, no ads.","image":"https://ahmeddilshadshah.github.io/ironlog-app/assets/icon-384.png","url":"https://ahmeddilshadshah.github.io/ironlog-app/"}
 </script>
 <style>
 @font-face{font-family:"Bebas Neue";src:url("assets/BebasNeue-Regular.ttf") format("truetype");font-display:swap}
@@ -51,6 +51,12 @@ nav a.nav-cta:hover{color:var(--accent-ink);filter:brightness(1.08)}
 /* hero */
 .hero{padding-block:clamp(40px,7vw,96px) clamp(48px,7vw,88px);background:radial-gradient(900px 520px at 78% 30%,rgba(79,195,217,.13),transparent 70%)}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,64px);align-items:center}
+.app-id{display:flex;align-items:center;gap:16px;margin:0 0 22px}
+.app-icon{border-radius:22.4%;box-shadow:0 10px 30px -8px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.06)}
+.app-id b{display:block;font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1;letter-spacing:.02em}
+.app-id span{color:var(--muted);font-size:.92rem}
+.get-head{display:flex;align-items:center;gap:18px;margin-bottom:12px}
+.get-head h2{margin:0}
 .eyebrow{font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin:0 0 14px}
 h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,7.4vw,5.9rem);line-height:.94;margin:0 0 22px;text-wrap:balance;letter-spacing:.01em}
 h1 em{font-style:normal;color:var(--accent)}
@@ -61,7 +67,8 @@ h1 em{font-style:normal;color:var(--accent)}
 .btn b{display:block;line-height:1.1}
 .btn-primary{background:var(--accent);color:var(--accent-ink)}
 .btn-primary:hover{filter:brightness(1.08)}
-.btn-soon{background:transparent;border-color:var(--line);color:var(--muted);cursor:default}
+.btn-store{background:transparent;border-color:#3a444d;color:var(--text)}
+.btn-store:hover{border-color:var(--accent);color:var(--accent)}
 .facts{display:flex;flex-wrap:wrap;gap:8px 20px;padding:0;margin:0;list-style:none;color:var(--muted);font-size:.95rem}
 .facts li::before{content:"";display:inline-block;width:7px;height:7px;border-radius:2px;background:var(--accent);margin-right:9px;vertical-align:middle}
 
@@ -94,7 +101,6 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem)
 .stores{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .store{border:1px solid var(--line);border-radius:20px;padding:26px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:var(--bg)}
 .store img.qr{width:132px;height:132px;border-radius:12px;background:#fff}
-.qr-soon{width:132px;height:132px;border-radius:12px;border:1px dashed var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.8rem;padding:10px}
 .store h3{font-family:var(--display);font-weight:400;font-size:1.9rem;margin:0 0 4px}
 .store p{margin:0 0 14px;color:var(--muted);font-size:.95rem}
 @media (max-width:860px){.stores{grid-template-columns:1fr}}
@@ -125,12 +131,12 @@ footer a:hover{color:var(--text);text-decoration:underline}
   <div class="hero" id="top">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Workout tracker</p>
+        <div class="app-id"><img class="app-icon" src="assets/icon-384.png" alt="IronLog app icon" width="84" height="84"><div><b>IronLog</b><span>Workout tracker for iPhone and Android</span></div></div>
         <h1>Log every set.<br><em>Share every win.</em></h1>
         <p class="lede">IronLog is a fast, simple way to log your workouts, track your strength and turn every session into a card worth sharing. No account to create, no ads in the way.</p>
         <div class="cta">
           <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"><span><small>Get it on</small><b>Google Play</b></span></a>
-          <span class="btn btn-soon" role="note"><span><small>Coming soon to the</small><b>App Store</b></span></span>
+          <a class="btn btn-store" href="https://apps.apple.com/app/id6820042796" rel="noopener"><span><small>Download on the</small><b>App Store</b></span></a>
         </div>
         <ul class="facts">
           <li>No account needed</li>
@@ -180,7 +186,7 @@ footer a:hover{color:var(--text);text-decoration:underline}
 
   <section class="get" id="download" aria-labelledby="download-h">
     <div class="wrap">
-      <h2 id="download-h">Get IronLog</h2>
+      <div class="get-head"><img class="app-icon" src="assets/icon-192.png" alt="" width="64" height="64"><h2 id="download-h">Get IronLog</h2></div>
       <p class="sub">Scan a code with your phone's camera, or tap a button.</p>
       <div class="stores">
         <div class="store">
@@ -192,11 +198,11 @@ footer a:hover{color:var(--text);text-decoration:underline}
           </div>
         </div>
         <div class="store">
-          <div class="qr-soon" role="img" aria-label="QR code for the App Store will appear here once the app is live">QR code appears when the app goes live</div>
+          <img class="qr" src="assets/qr-app-store.svg" alt="QR code linking to IronLog on the App Store" width="132" height="132">
           <div>
             <h3>iPhone</h3>
-            <p>On its way to the App Store.</p>
-            <span class="btn btn-soon" role="note"><span><small>Coming soon to the</small><b>App Store</b></span></span>
+            <p>Awaiting Apple's approval. The link and code start working as soon as it's live.</p>
+            <a class="btn btn-store" href="https://apps.apple.com/app/id6820042796" rel="noopener"><span><small>Download on the</small><b>App Store</b></span></a>
           </div>
         </div>
       </div>
