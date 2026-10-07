@@ -40,7 +40,9 @@ a{color:inherit}
 /* header */
 header{position:sticky;top:0;z-index:5;background:rgba(12,14,17,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
 .brand img{height:26px;width:auto}
+.brand img.app-icon{height:38px;width:38px}
 nav{display:flex;gap:22px;font-size:.95rem}
 nav a{text-decoration:none;color:var(--muted);padding:6px 0}
 nav a:hover{color:var(--text)}
@@ -118,7 +120,7 @@ footer a:hover{color:var(--text);text-decoration:underline}
 <a class="skip" href="#main">Skip to content</a>
 <header>
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="IronLog home"><img src="assets/logo.png" alt="IronLog" width="155" height="26"></a>
+    <a class="brand" href="#top" aria-label="IronLog home"><img class="app-icon" src="assets/icon-192.png" alt="" width="38" height="38"><img src="assets/logo.png" alt="IronLog" width="155" height="26"></a>
     <nav aria-label="Main">
       <a href="#screens">Screens</a>
       <a href="#features">Features</a>
