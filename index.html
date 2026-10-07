@@ -44,6 +44,8 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 nav{display:flex;gap:22px;font-size:.95rem}
 nav a{text-decoration:none;color:var(--muted);padding:6px 0}
 nav a:hover{color:var(--text)}
+nav a.nav-cta{background:var(--accent);color:var(--accent-ink);font-weight:700;padding:9px 18px;border-radius:10px}
+nav a.nav-cta:hover{color:var(--accent-ink);filter:brightness(1.08)}
 @media (max-width:560px){nav a:not(:last-child){display:none}}
 
 /* hero */
@@ -114,7 +116,7 @@ footer a:hover{color:var(--text);text-decoration:underline}
     <nav aria-label="Main">
       <a href="#screens">Screens</a>
       <a href="#features">Features</a>
-      <a href="#download">Get the app</a>
+      <a class="nav-cta" href="#download">Get the app</a>
     </nav>
   </div>
 </header>
