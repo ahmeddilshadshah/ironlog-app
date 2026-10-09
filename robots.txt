@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ahmeddilshadshah.github.io/ironlog-app/sitemap.xml

@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="en" dir="ltr" data-script="latin">
+<html lang="ko" dir="ltr" data-script="cjk">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IronLog: Workout Tracker</title>
-<meta name="description" content="IronLog is a fast, simple workout tracker. Log every set in seconds, track your strength, and turn each workout into a shareable card. No account, no ads, 15 languages.">
+<title>IronLog: 헬스 기록</title>
+<meta name="description" content="IronLog는 빠르고 간단한 운동 기록 앱입니다. 세트를 몇 초 만에 기록하고, 근력을 추적하고, 모든 운동을 공유할 수 있는 카드로 만드세요. 계정 없음, 광고 없음, 15개 언어 지원.">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#0c0e11">
-<link rel="canonical" href="https://ahmeddilshadshah.github.io/ironlog-app/">
+<link rel="canonical" href="https://ahmeddilshadshah.github.io/ironlog-app/ko/">
 <link rel="alternate" hreflang="en" href="https://ahmeddilshadshah.github.io/ironlog-app/">
 <link rel="alternate" hreflang="ar" href="https://ahmeddilshadshah.github.io/ironlog-app/ar/">
 <link rel="alternate" hreflang="bn" href="https://ahmeddilshadshah.github.io/ironlog-app/bn/">
@@ -24,26 +24,21 @@
 <link rel="alternate" hreflang="ur" href="https://ahmeddilshadshah.github.io/ironlog-app/ur/">
 <link rel="alternate" hreflang="zh-Hans" href="https://ahmeddilshadshah.github.io/ironlog-app/zh/">
 <link rel="alternate" hreflang="x-default" href="https://ahmeddilshadshah.github.io/ironlog-app/">
-<link rel="icon" type="image/png" href="favicon.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="en">
-<meta property="og:title" content="IronLog: Workout Tracker">
-<meta property="og:description" content="Log every set in seconds, track your strength, and share every win. No account, no ads, 15 languages.">
-<meta property="og:url" content="https://ahmeddilshadshah.github.io/ironlog-app/">
+<meta property="og:locale" content="ko">
+<meta property="og:title" content="IronLog: 헬스 기록">
+<meta property="og:description" content="세트를 몇 초 만에 기록하고, 근력을 추적하고, 모든 성과를 공유하세요. 계정 없음, 광고 없음, 15개 언어 지원.">
+<meta property="og:url" content="https://ahmeddilshadshah.github.io/ironlog-app/ko/">
 <meta property="og:image" content="https://ahmeddilshadshah.github.io/ironlog-app/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <!-- Store logos: Font Awesome Free 5 Brands, CC BY 4.0 (https://fontawesome.com/license/free). Apple and Google Play are trademarks of their respective owners. -->
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "IronLog: Workout Tracker", "inLanguage": "en", "applicationCategory": "HealthApplication", "operatingSystem": "Android, iOS", "description": "IronLog is a fast, simple workout tracker. Log every set in seconds, track your strength, and turn each workout into a shareable card. No account, no ads, 15 languages.", "image": "https://ahmeddilshadshah.github.io/ironlog-app/assets/icon-384.png", "url": "https://ahmeddilshadshah.github.io/ironlog-app/"}</script>
-<script>
-(function(){try{
-var codes=["ar", "bn", "de", "es", "fr", "hi", "id", "ja", "ko", "pt", "ru", "tr", "ur", "zh"],pick=localStorage.getItem('ironlog-lang')||((navigator.language||'en').toLowerCase().split('-')[0]);
-if(codes.indexOf(pick)>-1)location.replace(pick+'/'+location.hash);
-}catch(e){}})();
-</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "IronLog: 헬스 기록", "inLanguage": "ko", "applicationCategory": "HealthApplication", "operatingSystem": "Android, iOS", "description": "IronLog는 빠르고 간단한 운동 기록 앱입니다. 세트를 몇 초 만에 기록하고, 근력을 추적하고, 모든 운동을 공유할 수 있는 카드로 만드세요. 계정 없음, 광고 없음, 15개 언어 지원.", "image": "https://ahmeddilshadshah.github.io/ironlog-app/assets/icon-384.png", "url": "https://ahmeddilshadshah.github.io/ironlog-app/ko/"}</script>
+
 <style>
-@font-face{font-family:"Bebas Neue";src:url("assets/BebasNeue-Regular.ttf") format("truetype");font-display:swap}
-@font-face{font-family:"Oswald";src:url("assets/Oswald-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"Bebas Neue";src:url("../assets/BebasNeue-Regular.ttf") format("truetype");font-display:swap}
+@font-face{font-family:"Oswald";src:url("../assets/Oswald-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
 :root{
   --bg:#0c0e11; --bg-raise:#14181d; --line:#232a31; --text:#eef2f5; --muted:#97a3ae;
   --accent:#4fc3d9; --accent-ink:#06222a; --white:#fff;
@@ -175,34 +170,34 @@ html:lang(ko) h1,html:lang(ko) h2,html:lang(ko) p,html:lang(ko) h3{word-break:ke
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
 <header>
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="IronLog home"><img class="app-icon" src="assets/icon-192.png" alt="" width="38" height="38"><img src="assets/logo.png" alt="IronLog" width="155" height="26"></a>
+    <a class="brand" href="#top" aria-label="IronLog 홈"><img class="app-icon" src="../assets/icon-192.png" alt="" width="38" height="38"><img src="../assets/logo.png" alt="IronLog" width="155" height="26"></a>
     <div class="tools">
       <nav aria-label="Main">
-        <a href="#screens">Screens</a>
-        <a href="#features">Features</a>
-        <a class="nav-cta" href="#download">Get the app</a>
+        <a href="#screens">화면</a>
+        <a href="#features">기능</a>
+        <a class="nav-cta" href="#download">앱 받기</a>
       </nav>
       <details class="lang">
-        <summary aria-label="Language"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span class="lang-name">English</span></summary>
+        <summary aria-label="언어"><svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span class="lang-name">한국어</span></summary>
         <ul>
-          <li><a href="./" lang="en" hreflang="en" data-lang="en" aria-current="true">English</a></li>
-<li><a href="ar/" lang="ar" hreflang="ar" data-lang="ar">العربية</a></li>
-<li><a href="bn/" lang="bn" hreflang="bn" data-lang="bn">বাংলা</a></li>
-<li><a href="de/" lang="de" hreflang="de" data-lang="de">Deutsch</a></li>
-<li><a href="es/" lang="es" hreflang="es" data-lang="es">Español</a></li>
-<li><a href="fr/" lang="fr" hreflang="fr" data-lang="fr">Français</a></li>
-<li><a href="hi/" lang="hi" hreflang="hi" data-lang="hi">हिन्दी</a></li>
-<li><a href="id/" lang="id" hreflang="id" data-lang="id">Bahasa Indonesia</a></li>
-<li><a href="ja/" lang="ja" hreflang="ja" data-lang="ja">日本語</a></li>
-<li><a href="ko/" lang="ko" hreflang="ko" data-lang="ko">한국어</a></li>
-<li><a href="pt/" lang="pt-BR" hreflang="pt-BR" data-lang="pt">Português</a></li>
-<li><a href="ru/" lang="ru" hreflang="ru" data-lang="ru">Русский</a></li>
-<li><a href="tr/" lang="tr" hreflang="tr" data-lang="tr">Türkçe</a></li>
-<li><a href="ur/" lang="ur" hreflang="ur" data-lang="ur">اردو</a></li>
-<li><a href="zh/" lang="zh-Hans" hreflang="zh-Hans" data-lang="zh">简体中文</a></li>
+          <li><a href="../" lang="en" hreflang="en" data-lang="en">English</a></li>
+<li><a href="../ar/" lang="ar" hreflang="ar" data-lang="ar">العربية</a></li>
+<li><a href="../bn/" lang="bn" hreflang="bn" data-lang="bn">বাংলা</a></li>
+<li><a href="../de/" lang="de" hreflang="de" data-lang="de">Deutsch</a></li>
+<li><a href="../es/" lang="es" hreflang="es" data-lang="es">Español</a></li>
+<li><a href="../fr/" lang="fr" hreflang="fr" data-lang="fr">Français</a></li>
+<li><a href="../hi/" lang="hi" hreflang="hi" data-lang="hi">हिन्दी</a></li>
+<li><a href="../id/" lang="id" hreflang="id" data-lang="id">Bahasa Indonesia</a></li>
+<li><a href="../ja/" lang="ja" hreflang="ja" data-lang="ja">日本語</a></li>
+<li><a href="../ko/" lang="ko" hreflang="ko" data-lang="ko" aria-current="true">한국어</a></li>
+<li><a href="../pt/" lang="pt-BR" hreflang="pt-BR" data-lang="pt">Português</a></li>
+<li><a href="../ru/" lang="ru" hreflang="ru" data-lang="ru">Русский</a></li>
+<li><a href="../tr/" lang="tr" hreflang="tr" data-lang="tr">Türkçe</a></li>
+<li><a href="../ur/" lang="ur" hreflang="ur" data-lang="ur">اردو</a></li>
+<li><a href="../zh/" lang="zh-Hans" hreflang="zh-Hans" data-lang="zh">简体中文</a></li>
         </ul>
       </details>
     </div>
@@ -213,78 +208,77 @@ html:lang(ko) h1,html:lang(ko) h2,html:lang(ko) p,html:lang(ko) h3{word-break:ke
   <div class="hero" id="top">
     <div class="wrap">
       <div>
-        <div class="app-id"><img class="app-icon" src="assets/icon-384.png" alt="IronLog app icon" width="84" height="84"><div><b>IronLog</b><span>Workout tracker for iPhone and Android</span></div></div>
-        <h1>Log every set.<br><em>Share every win.</em></h1>
-        <p class="lede">IronLog is a fast, simple way to log your workouts, track your strength and turn every session into a card worth sharing. No account to create, no ads in the way.</p>
+        <div class="app-id"><img class="app-icon" src="../assets/icon-384.png" alt="IronLog 앱 아이콘" width="84" height="84"><div><b>IronLog</b><span>iPhone 및 Android용 운동 기록 앱</span></div></div>
+        <h1>모든 세트를 기록하세요.<br><em>모든 성과를 공유하세요.</em></h1>
+        <p class="lede">IronLog는 운동을 기록하고, 근력을 추적하고, 매 세션을 공유하고 싶은 카드로 만드는 빠르고 간단한 방법입니다. 계정을 만들 필요도, 방해하는 광고도 없습니다.</p>
         <div class="cta">
-          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"><svg class="ico" viewBox="25 -448 461.51724137931035 512" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" fill="currentColor" d="M325 214 105 435 385 274ZM47 448 304 192 47 -64Q25 -53 25 -29V413Q25 437 47 448ZM472 222Q486 212 486.5 192.0Q487 172 473 162L413 128L348 192L413 256ZM105 -51 325 170 385 110Z"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
-          <span class="btn btn-soon" role="note"><svg class="ico" viewBox="4 -416 376 448.03846153846155" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" fill="currentColor" d="M319 179Q319 116 380 87Q368 49 339.0 9.0Q310 -31 278 -32Q264 -32 241.0 -23.0Q218 -14 201 -14Q184 -14 160.5 -23.0Q137 -32 126 -32Q104 -33 79.5 -8.0Q55 17 40.5 44.0Q26 71 18 93Q4 135 4 174Q4 237 38.5 272.0Q73 307 119 308Q134 308 162.0 298.0Q190 288 196 288Q199 288 231.0 299.0Q263 310 284 309Q341 304 369 264Q318 234 319 179ZM262 344Q230 306 193 309Q189 349 218 381Q230 395 249.0 405.0Q268 415 286 416Q289 376 262 344Z"/></svg><span><small>Coming soon to the</small><b>App Store</b></span></span>
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"><svg class="ico" viewBox="25 -448 461.51724137931035 512" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" fill="currentColor" d="M325 214 105 435 385 274ZM47 448 304 192 47 -64Q25 -53 25 -29V413Q25 437 47 448ZM472 222Q486 212 486.5 192.0Q487 172 473 162L413 128L348 192L413 256ZM105 -51 325 170 385 110Z"/></svg><span><small>다음에서 받기</small><b>Google Play</b></span></a>
+          <span class="btn btn-soon" role="note"><svg class="ico" viewBox="4 -416 376 448.03846153846155" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" fill="currentColor" d="M319 179Q319 116 380 87Q368 49 339.0 9.0Q310 -31 278 -32Q264 -32 241.0 -23.0Q218 -14 201 -14Q184 -14 160.5 -23.0Q137 -32 126 -32Q104 -33 79.5 -8.0Q55 17 40.5 44.0Q26 71 18 93Q4 135 4 174Q4 237 38.5 272.0Q73 307 119 308Q134 308 162.0 298.0Q190 288 196 288Q199 288 231.0 299.0Q263 310 284 309Q341 304 369 264Q318 234 319 179ZM262 344Q230 306 193 309Q189 349 218 381Q230 395 249.0 405.0Q268 415 286 416Q289 376 262 344Z"/></svg><span><small>곧 출시</small><b>App Store</b></span></span>
         </div>
         <ul class="facts">
-          <li>No account needed</li>
-          <li>No ads</li>
-          <li>15 languages</li>
+          <li>계정 필요 없음</li>
+          <li>광고 없음</li>
+          <li>15개 언어</li>
         </ul>
       </div>
       <div class="hero-art" aria-hidden="true">
-        <div class="phone p1"><img src="assets/shots/en/03.webp" alt="" width="720" height="1565"></div>
-        <div class="phone p2"><img src="assets/shots/en/05.webp" alt="" width="720" height="1565"></div>
+        <div class="phone p1"><img src="../assets/shots/ko/03.webp" alt="" width="720" height="1565"></div>
+        <div class="phone p2"><img src="../assets/shots/ko/05.webp" alt="" width="720" height="1565"></div>
       </div>
     </div>
   </div>
 
   <section id="screens" aria-labelledby="screens-h">
     <div class="wrap">
-      <h2 id="screens-h">See it in action</h2>
-      <p class="sub">From the first setup to the finished workout card, here&#x27;s what using IronLog looks like.</p>
+      <h2 id="screens-h">실제 화면 보기</h2>
+      <p class="sub">첫 설정부터 완성된 운동 카드까지, IronLog를 사용하는 모습입니다.</p>
     </div>
-    <ul class="gallery" tabindex="0" aria-label="IronLog screenshots, scroll sideways">
-      <li><div class="phone"><img src="assets/shots/en/01.webp" alt="IronLog screenshot 1 of 9" width="720" height="1565" loading="lazy"></div></li>
-      <li><div class="phone"><img src="assets/shots/en/02.webp" alt="IronLog screenshot 2 of 9" width="720" height="1565" loading="lazy"></div></li>
-      <li><div class="phone"><img src="assets/shots/en/03.webp" alt="IronLog screenshot 3 of 9" width="720" height="1565" loading="lazy"></div></li>
-      <li><div class="phone"><img src="assets/shots/en/04.webp" alt="IronLog screenshot 4 of 9" width="720" height="1565" loading="lazy"></div></li>
-      <li><div class="phone"><img src="assets/shots/en/05.webp" alt="IronLog screenshot 5 of 9" width="720" height="1565" loading="lazy"></div></li>
-      <li><div class="phone"><img src="assets/shots/en/06.webp" alt="IronLog screenshot 6 of 9" width="720" height="1565" loading="lazy"></div></li>
-      <li><div class="phone"><img src="assets/shots/en/07.webp" alt="IronLog screenshot 7 of 9" width="720" height="1565" loading="lazy"></div></li>
-      <li><div class="phone"><img src="assets/shots/en/08.webp" alt="IronLog screenshot 8 of 9" width="720" height="1565" loading="lazy"></div></li>
-      <li><div class="phone"><img src="assets/shots/en/09.webp" alt="IronLog screenshot 9 of 9" width="720" height="1565" loading="lazy"></div></li>
+    <ul class="gallery" tabindex="0" aria-label="IronLog 스크린샷, 옆으로 스크롤">
+      <li><div class="phone"><img src="../assets/shots/ko/01.webp" alt="IronLog 스크린샷 1/8" width="720" height="1565" loading="lazy"></div></li>
+      <li><div class="phone"><img src="../assets/shots/ko/02.webp" alt="IronLog 스크린샷 2/8" width="720" height="1565" loading="lazy"></div></li>
+      <li><div class="phone"><img src="../assets/shots/ko/03.webp" alt="IronLog 스크린샷 3/8" width="720" height="1565" loading="lazy"></div></li>
+      <li><div class="phone"><img src="../assets/shots/ko/04.webp" alt="IronLog 스크린샷 4/8" width="720" height="1565" loading="lazy"></div></li>
+      <li><div class="phone"><img src="../assets/shots/ko/05.webp" alt="IronLog 스크린샷 5/8" width="720" height="1565" loading="lazy"></div></li>
+      <li><div class="phone"><img src="../assets/shots/ko/06.webp" alt="IronLog 스크린샷 6/8" width="720" height="1565" loading="lazy"></div></li>
+      <li><div class="phone"><img src="../assets/shots/ko/07.webp" alt="IronLog 스크린샷 7/8" width="720" height="1565" loading="lazy"></div></li>
+      <li><div class="phone"><img src="../assets/shots/ko/08.webp" alt="IronLog 스크린샷 8/8" width="720" height="1565" loading="lazy"></div></li>
     </ul>
   </section>
 
   <section id="features" aria-labelledby="features-h">
     <div class="wrap">
-      <h2 id="features-h">Built for the way you train</h2>
-      <p class="sub">Everything you need to log, follow and show your training, and nothing you don&#x27;t.</p>
+      <h2 id="features-h">나만의 운동 방식에 맞춰</h2>
+      <p class="sub">운동을 기록하고, 따라가고, 보여주는 데 필요한 모든 것, 불필요한 것은 없습니다.</p>
       <ul class="features">
-        <li><h3>Log in seconds</h3><p>Sets, reps, weight, duration and bodyweight exercises with a tap. The pickers start from your last numbers, and a rest timer is built in.</p></li>
-        <li><h3>Your program, your way</h3><p>Create your own training days, pair exercises into supersets, and use the built-in exercise library or add your own custom exercises. Give any exercise your own alias, like “BB Bench”, so it&#x27;s named the way you say it.</p></li>
-        <li><h3>See real progress</h3><p>Personal records, weekly trends and volume charts, plus body weight and measurements over time, all in one calendar history.</p></li>
-        <li><h3>Share cards</h3><p>Turn any finished workout into a card with your photo, colours, font and layout, in an Instagram Story style, ready to share or save.</p></li>
-        <li><h3>Private by design</h3><p>Your data stays on your device. No account, login or cloud needed, with one-file backup and restore and an export of your workout log.</p></li>
-        <li><h3>Made for everyone</h3><p>Available in 15 languages, with full right-to-left support for Arabic and Urdu.</p></li>
+        <li><h3>몇 초 만에 기록</h3><p>세트, 횟수, 무게, 시간, 맨몸 운동을 한 번의 탭으로. 선택기는 지난 기록에서 시작하고, 휴식 타이머도 기본 제공됩니다.</p></li>
+        <li><h3>나만의 프로그램</h3><p>나만의 운동 요일을 만들고, 운동을 슈퍼세트로 묶고, 기본 운동 라이브러리를 쓰거나 직접 운동을 추가하세요. 어떤 운동에든 “BB Bench” 같은 별칭을 붙여 평소 부르는 이름으로 쓸 수 있습니다.</p></li>
+        <li><h3>진짜 성장 확인</h3><p>개인 최고 기록, 주간 추세, 볼륨 차트와 함께 시간에 따른 체중과 신체 치수도 한눈에. 모두 달력형 기록에서 볼 수 있습니다.</p></li>
+        <li><h3>공유 카드</h3><p>완료한 운동을 내 사진, 색상, 글꼴, 레이아웃으로 꾸민 인스타그램 스토리 스타일 카드로 만들어 바로 공유하거나 저장하세요.</p></li>
+        <li><h3>처음부터 프라이버시</h3><p>데이터는 내 기기에만 저장됩니다. 계정, 로그인, 클라우드가 필요 없으며, 파일 하나로 백업과 복원, 운동 기록 내보내기도 지원합니다.</p></li>
+        <li><h3>모두를 위한 앱</h3><p>15개 언어를 지원하며, 아랍어와 우르두어의 오른쪽에서 왼쪽 표기를 완벽하게 지원합니다.</p></li>
       </ul>
     </div>
   </section>
 
   <section class="get" id="download" aria-labelledby="download-h">
     <div class="wrap">
-      <div class="get-head"><img class="app-icon" src="assets/icon-192.png" alt="" width="64" height="64"><h2 id="download-h">Get IronLog</h2></div>
-      <p class="sub">Scan a code with your phone&#x27;s camera, or tap a button.</p>
+      <div class="get-head"><img class="app-icon" src="../assets/icon-192.png" alt="" width="64" height="64"><h2 id="download-h">IronLog 받기</h2></div>
+      <p class="sub">휴대폰 카메라로 코드를 스캔하거나 버튼을 탭하세요.</p>
       <div class="stores">
         <div class="store">
-          <img class="qr" src="assets/qr-google-play.svg" alt="QR code linking to IronLog on Google Play" width="132" height="132">
+          <img class="qr" src="../assets/qr-google-play.svg" alt="Google Play의 IronLog로 연결되는 QR 코드" width="132" height="132">
           <div>
             <h3>Android</h3>
-            <p>Available now on Google Play.</p>
-            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"><svg class="ico" viewBox="25 -448 461.51724137931035 512" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" fill="currentColor" d="M325 214 105 435 385 274ZM47 448 304 192 47 -64Q25 -53 25 -29V413Q25 437 47 448ZM472 222Q486 212 486.5 192.0Q487 172 473 162L413 128L348 192L413 256ZM105 -51 325 170 385 110Z"/></svg><span><small>Get it on</small><b>Google Play</b></span></a>
+            <p>지금 Google Play에서 만나보세요.</p>
+            <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"><svg class="ico" viewBox="25 -448 461.51724137931035 512" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" fill="currentColor" d="M325 214 105 435 385 274ZM47 448 304 192 47 -64Q25 -53 25 -29V413Q25 437 47 448ZM472 222Q486 212 486.5 192.0Q487 172 473 162L413 128L348 192L413 256ZM105 -51 325 170 385 110Z"/></svg><span><small>다음에서 받기</small><b>Google Play</b></span></a>
           </div>
         </div>
         <div class="store">
-          <div class="qr-soon" role="img" aria-label="QR code appears when the app goes live">QR code appears when the app goes live</div>
+          <div class="qr-soon" role="img" aria-label="앱이 출시되면 QR 코드가 표시됩니다">앱이 출시되면 QR 코드가 표시됩니다</div>
           <div>
             <h3>iPhone</h3>
-            <p>On its way to the App Store.</p>
-            <span class="btn btn-soon" role="note"><svg class="ico" viewBox="4 -416 376 448.03846153846155" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" fill="currentColor" d="M319 179Q319 116 380 87Q368 49 339.0 9.0Q310 -31 278 -32Q264 -32 241.0 -23.0Q218 -14 201 -14Q184 -14 160.5 -23.0Q137 -32 126 -32Q104 -33 79.5 -8.0Q55 17 40.5 44.0Q26 71 18 93Q4 135 4 174Q4 237 38.5 272.0Q73 307 119 308Q134 308 162.0 298.0Q190 288 196 288Q199 288 231.0 299.0Q263 310 284 309Q341 304 369 264Q318 234 319 179ZM262 344Q230 306 193 309Q189 349 218 381Q230 395 249.0 405.0Q268 415 286 416Q289 376 262 344Z"/></svg><span><small>Coming soon to the</small><b>App Store</b></span></span>
+            <p>App Store에도 곧 출시됩니다.</p>
+            <span class="btn btn-soon" role="note"><svg class="ico" viewBox="4 -416 376 448.03846153846155" aria-hidden="true" focusable="false"><path transform="scale(1,-1)" fill="currentColor" d="M319 179Q319 116 380 87Q368 49 339.0 9.0Q310 -31 278 -32Q264 -32 241.0 -23.0Q218 -14 201 -14Q184 -14 160.5 -23.0Q137 -32 126 -32Q104 -33 79.5 -8.0Q55 17 40.5 44.0Q26 71 18 93Q4 135 4 174Q4 237 38.5 272.0Q73 307 119 308Q134 308 162.0 298.0Q190 288 196 288Q199 288 231.0 299.0Q263 310 284 309Q341 304 369 264Q318 234 319 179ZM262 344Q230 306 193 309Q189 349 218 381Q230 395 249.0 405.0Q268 415 286 416Q289 376 262 344Z"/></svg><span><small>곧 출시</small><b>App Store</b></span></span>
           </div>
         </div>
       </div>
@@ -296,10 +290,10 @@ html:lang(ko) h1,html:lang(ko) h2,html:lang(ko) p,html:lang(ko) h3{word-break:ke
   <div class="wrap">
     <span>© 2026 IronLog</span>
     <ul>
-      <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/">Privacy Policy</a></li>
-      <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/terms.html">Terms of Use</a></li>
-      <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/manual.html">User Guide</a></li>
-      <li><a href="mailto:ironlog.journal@gmail.com">Contact</a></li>
+      <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/">개인정보 처리방침</a></li>
+      <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/terms.html">이용약관</a></li>
+      <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/manual.html">사용자 가이드</a></li>
+      <li><a href="mailto:ironlog.journal@gmail.com">문의</a></li>
     </ul>
   </div>
 </footer>
