@@ -427,3 +427,12 @@ LANGS = {
     "fr": (FR, "fr-FR"), "hi": (HI, "hi-IN"), "id": (ID, "id"), "ja": (JA, "ja-JP"), "ko": (KO, "ko-KR"),
     "pt": (PT, "pt-BR"), "ru": (RU, "ru-RU"), "tr": (TR, "tr-TR"), "ur": (UR, "ur"), "zh": (ZH, "zh-CN"),
 }
+
+# aria-labels for the gallery arrows: (previous, next)
+PREV_NEXT = {
+    "en": ("Previous", "Next"), "es": ("Anterior", "Siguiente"), "fr": ("Précédent", "Suivant"),
+    "pt": ("Anterior", "Próximo"), "de": ("Zurück", "Weiter"), "ru": ("Назад", "Далее"),
+    "ar": ("السابق", "التالي"), "hi": ("पिछला", "अगला"), "bn": ("আগের", "পরের"),
+    "id": ("Sebelumnya", "Berikutnya"), "ja": ("前へ", "次へ"), "ko": ("이전", "다음"),
+    "tr": ("Önceki", "Sonraki"), "ur": ("پچھلا", "اگلا"), "zh": ("上一个", "下一个"),
+}

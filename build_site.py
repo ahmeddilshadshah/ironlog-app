@@ -3,7 +3,7 @@ Run: python build_site.py
 When the iOS app is live on the App Store, set APP_STORE_LIVE = True and rebuild."""
 import html, json, glob
 from pathlib import Path
-from strings import LANGS
+from strings import LANGS, PREV_NEXT as PN
 
 HERE = Path(__file__).resolve().parent
 SITE = "https://ahmeddilshadshah.github.io/ironlog-app"
@@ -51,23 +51,21 @@ html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
 a{color:inherit}
-.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:20px}
+.wrap{width:100%;max-width:1120px;margin-inline:auto;padding-inline:max(20px,env(safe-area-inset-left),env(safe-area-inset-right))}
 .skip{position:absolute;inset-inline-start:-999px;top:8px;background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:8px;z-index:30}
 .skip:focus{inset-inline-start:12px}
 :focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:rgba(12,14,17,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;padding-top:env(safe-area-inset-top);z-index:20;background:rgba(12,14,17,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
 .brand{display:flex;align-items:center;gap:12px;flex:0 0 auto}
 .brand img{height:26px;width:auto}
 .brand img.app-icon{height:38px;width:38px}
 .tools{display:flex;align-items:center;gap:12px}
 nav{display:flex;align-items:center;gap:22px;font-size:.95rem}
-nav a{text-decoration:none;color:var(--muted);padding:6px 0;white-space:nowrap}
-nav a:hover{color:var(--text)}
-nav a.nav-cta{background:var(--accent);color:var(--accent-ink);font-weight:700;padding:9px 16px;border-radius:10px}
-nav a.nav-cta:hover{color:var(--accent-ink);filter:brightness(1.08)}
+nav a{text-decoration:none;color:var(--muted);padding:12px 4px;white-space:nowrap}
+nav a.nav-cta{background:var(--accent);color:var(--accent-ink);font-weight:700;padding:11px 16px;border-radius:10px}
 @media (max-width:640px){nav a:not(.nav-cta){display:none}}
 @media (max-width:470px){.brand img:not(.app-icon){display:none}.tools{gap:8px}}
 
@@ -75,11 +73,10 @@ nav a.nav-cta:hover{color:var(--accent-ink);filter:brightness(1.08)}
 .lang{position:relative}
 .lang summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;color:var(--muted);font-size:.9rem;user-select:none}
 .lang summary::-webkit-details-marker{display:none}
-.lang summary:hover,.lang[open] summary{color:var(--text);border-color:#3a444d}
+.lang[open] summary{color:var(--text);border-color:#3a444d}
 .globe{width:18px;height:18px;flex:0 0 auto}
 .lang ul{position:absolute;inset-inline-end:0;top:calc(100% + 8px);margin:0;padding:6px;list-style:none;background:var(--bg-raise);border:1px solid var(--line);border-radius:14px;min-width:200px;max-height:72vh;overflow:auto;box-shadow:0 24px 60px -20px rgba(0,0,0,.85)}
-.lang li a{display:block;padding:9px 12px;border-radius:9px;text-decoration:none;color:var(--text);font-size:.95rem;font-family:system-ui,"Segoe UI","Noto Sans",sans-serif}
-.lang li a:hover{background:rgba(255,255,255,.06)}
+.lang li a{display:block;padding:12px 12px;border-radius:9px;text-decoration:none;color:var(--text);font-size:.95rem;font-family:system-ui,"Segoe UI","Noto Sans",sans-serif}
 .lang li a[aria-current]{background:rgba(79,195,217,.14);color:var(--accent)}
 @media (max-width:640px){.lang summary .lang-name{display:none}.lang summary{padding:9px 10px}}
 
@@ -92,7 +89,7 @@ nav a.nav-cta:hover{color:var(--accent-ink);filter:brightness(1.08)}
 .app-id span{color:var(--muted);font-size:.92rem}
 .get-head{display:flex;align-items:center;gap:18px;margin-bottom:12px}
 .get-head h2{margin:0}
-h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,7.4vw,5.9rem);line-height:.94;margin:0 0 22px;text-wrap:balance;letter-spacing:.01em}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(3rem,6.2vw,5.2rem);line-height:.96;margin:0 0 22px;text-wrap:balance;letter-spacing:.01em}
 h1 em{font-style:normal;color:var(--accent)}
 .lede{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--muted);max-width:34em;margin:0 0 28px}
 .cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:22px}
@@ -101,9 +98,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .btn small{display:block;font-weight:500;font-size:.72rem;opacity:.8;line-height:1.2}
 .btn b{display:block;line-height:1.15}
 .btn-primary{background:var(--accent);color:var(--accent-ink)}
-.btn-primary:hover{filter:brightness(1.08)}
 .btn-store{background:transparent;border-color:#3a444d;color:var(--text)}
-.btn-store:hover{border-color:var(--accent);color:var(--accent)}
 .btn-soon{background:transparent;border-color:var(--line);color:var(--muted);cursor:default}
 .qr-soon{width:132px;height:132px;border-radius:12px;border:1px dashed var(--line);display:grid;place-items:center;text-align:center;color:var(--muted);font-size:.8rem;padding:10px}
 .facts{display:flex;flex-wrap:wrap;gap:8px 20px;padding:0;margin:0;list-style:none;color:var(--muted);font-size:.95rem}
@@ -123,7 +118,7 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem)
 .sub{color:var(--muted);max-width:40em;margin:0 0 34px}
 
 /* gallery */
-.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;list-style:none;margin:0;padding:6px max(20px,calc((100% - 1120px) / 2 + 20px)) 24px;scroll-padding-inline:max(20px,calc((100% - 1120px) / 2 + 20px));scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch}
+.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;list-style:none;margin:0;padding:6px max(20px,calc((100% - 1120px) / 2 + 20px)) 24px;scroll-padding-inline:max(20px,calc((100% - 1120px) / 2 + 20px));scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%)}
 .gallery li{flex:0 0 auto;width:min(66vw,270px);scroll-snap-align:start;list-style:none}
 .gallery .phone{border-radius:30px}
 
@@ -144,11 +139,45 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem)
 @media (max-width:860px){.stores{grid-template-columns:1fr}}
 @media (max-width:420px){.store{grid-template-columns:1fr;justify-items:start}}
 
-footer{padding-block:34px 48px;color:var(--muted);font-size:.92rem}
+footer{padding-block:34px calc(48px + env(safe-area-inset-bottom));color:var(--muted);font-size:.92rem}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
-footer ul{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;padding:0;margin:0}
-footer a{text-decoration:none}
-footer a:hover{color:var(--text);text-decoration:underline}
+footer ul{display:flex;flex-wrap:wrap;gap:0 18px;list-style:none;padding:0;margin:0}
+footer a{display:inline-block;padding:12px 4px;text-decoration:none}
+
+
+/* touch behaviour */
+a,button,summary{-webkit-tap-highlight-color:transparent}
+.btn,nav a,.lang summary,.gal-btn{user-select:none;-webkit-user-select:none}
+.btn,nav a.nav-cta,.gal-btn,.lang summary{transition:transform 160ms cubic-bezier(.23,1,.32,1),filter 150ms ease,border-color 150ms ease,color 150ms ease,background-color 150ms ease}
+.btn:active,nav a.nav-cta:active,.gal-btn:active{transform:scale(.97)}
+.btn-soon:active{transform:none}
+@media (hover:hover) and (pointer:fine){
+  nav a:hover{color:var(--text)}
+  nav a.nav-cta:hover{color:var(--accent-ink);filter:brightness(1.08)}
+  .lang summary:hover{color:var(--text);border-color:#3a444d}
+  .lang li a:hover{background:rgba(255,255,255,.06)}
+  .btn-primary:hover{filter:brightness(1.08)}
+  .btn-store:hover{border-color:var(--accent);color:var(--accent)}
+  .gal-btn:hover{border-color:var(--accent);color:var(--accent)}
+  footer a:hover{color:var(--text);text-decoration:underline}
+}
+/* gallery arrows only where a mouse is the main input */
+.gal-ctrl{display:none;gap:8px;margin:-14px 0 18px}
+@media (hover:hover) and (pointer:fine){.gal-ctrl{display:flex}}
+.gal-btn{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0}
+.gal-btn svg{width:20px;height:20px}
+[dir=rtl] .gal-btn svg{transform:scaleX(-1)}
+/* language menu opens from its button */
+.lang ul{transform-origin:top right}
+[dir=rtl] .lang ul{transform-origin:top left}
+.lang[open] ul{animation:menu-in 150ms cubic-bezier(.23,1,.32,1)}
+@keyframes menu-in{from{opacity:0;transform:scale(.96)}}
+@keyframes menu-fade{from{opacity:0}}
+p.lede,p.sub,.features p{text-wrap:pretty}
+@media (prefers-reduced-motion:reduce){
+  .btn,nav a.nav-cta,.gal-btn,.lang summary{transition:none}
+  .lang[open] ul{animation-name:menu-fade}
+}
 
 /* scripts other than Latin: no all-caps display face, so use weight and calmer sizes */
 [data-script=cyr] h1{font-weight:700;font-size:clamp(2.5rem,6.2vw,4.9rem);line-height:1.04;letter-spacing:0}
@@ -173,6 +202,11 @@ if(codes.indexOf(pick)>-1)location.replace(pick+'/'+location.hash);
 
 MENU_JS = """<script>
 (function(){
+var g=document.querySelector('.gallery');
+document.querySelectorAll('.gal-btn').forEach(function(b){b.addEventListener('click',function(){
+if(!g)return;var li=g.querySelector('li');var step=li.getBoundingClientRect().width+18;
+var rtl=document.documentElement.dir==='rtl';var rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+g.scrollBy({left:(+b.getAttribute('data-dir'))*(rtl?-1:1)*step*2,behavior:rm?'auto':'smooth'});});});
 var d=document.querySelector('details.lang');if(!d)return;
 d.addEventListener('click',function(e){var a=e.target.closest('a[data-lang]');if(a){try{localStorage.setItem('ironlog-lang',a.getAttribute('data-lang'))}catch(x){}}});
 document.addEventListener('click',function(e){if(d.open&&!d.contains(e.target))d.open=false});
@@ -212,7 +246,7 @@ def build(code):
         lang_items.append(f'<li><a href="{href}" lang="{LANGS[c][0]["html_lang"]}" hreflang="{LANGS[c][0]["html_lang"]}" data-lang="{c}"{cur}>{E(LANGS[c][0]["name"])}</a></li>')
 
     gallery = "\n".join(
-        f'      <li><div class="phone"><img src="{P}assets/shots/{code}/{i:02d}.webp" alt="{E(S["shot_alt"].format(n=i, total=n_shots))}" width="720" height="1565" loading="lazy"></div></li>'
+        f'      <li><div class="phone"><img src="{P}assets/shots/{code}/{i:02d}.webp" alt="{E(S["shot_alt"].format(n=i, total=n_shots))}" width="720" height="1565" loading="lazy" decoding="async"></div></li>'
         for i in range(1, n_shots + 1))
 
     features = "\n".join(f'        <li><h3>{t(f"f{i}h")}</h3><p>{t(f"f{i}p")}</p></li>' for i in range(1, 7))
@@ -236,7 +270,7 @@ def build(code):
 <html lang="{S['html_lang']}" dir="{S['dir']}" data-script="{SCRIPT[code]}">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{t('title')}</title>
 <meta name="description" content="{t('desc')}">
 <meta name="color-scheme" content="dark">
@@ -297,7 +331,7 @@ def build(code):
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="phone p1"><img src="{P}assets/shots/{code}/{dash:02d}.webp" alt="" width="720" height="1565"></div>
-        <div class="phone p2"><img src="{P}assets/shots/{code}/{log:02d}.webp" alt="" width="720" height="1565"></div>
+        <div class="phone p2"><img src="{P}assets/shots/{code}/{log:02d}.webp" alt="" width="720" height="1565" fetchpriority="high"></div>
       </div>
     </div>
   </div>
@@ -306,6 +340,10 @@ def build(code):
     <div class="wrap">
       <h2 id="screens-h">{t('screens_h')}</h2>
       <p class="sub">{t('screens_sub')}</p>
+      <div class="gal-ctrl">
+        <button type="button" class="gal-btn" data-dir="-1" aria-label="{E(PN[code][0])}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <button type="button" class="gal-btn" data-dir="1" aria-label="{E(PN[code][1])}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
     </div>
     <ul class="gallery" tabindex="0" aria-label="{t('gallery_label')}">
 {gallery}
