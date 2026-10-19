@@ -34,7 +34,7 @@ SOCIALS = [
     ("tiktok", "TikTok", "https://www.tiktok.com/@ironlog.fit"),
 ]
 SOCIAL_HTML = "".join(
-    f'<a href="{url}" target="_blank" rel="noopener" aria-label="IronLog on {label}">{glyph_svg(key)}</a>'
+    f'<a href="{url}" target="_blank" rel="noopener" aria-label="IronLog on {label}" title="IronLog on {label}">{glyph_svg(key)}</a>'
     for key, label, url in SOCIALS
 )
 GLOBE = ('<svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
@@ -154,10 +154,14 @@ footer{padding-block:34px calc(48px + env(safe-area-inset-bottom));color:var(--m
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
 footer ul{display:flex;flex-wrap:wrap;gap:0 18px;list-style:none;padding:0;margin:0}
 footer a{display:inline-block;padding:12px 4px;text-decoration:none}
-.foot-left{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
-footer .social{display:flex;gap:8px}
-footer .social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #3a444d;border-radius:50%;color:var(--text)}
-footer .social .ico{height:18px;width:auto}
+/* "Follow IronLog": a label plus round, outlined logo buttons under the facts; the outline and the label say they can be tapped */
+.follow{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:22px}
+.follow>span{color:var(--muted);font-size:.95rem;font-weight:600}
+.social{display:flex;gap:10px}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border:1px solid #3a444d;border-radius:50%;color:var(--text);text-decoration:none;cursor:pointer;transition:border-color .15s,color .15s,transform .15s}
+.social a:active{transform:scale(.94)}
+.social a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.social .ico{height:19px;width:auto}
 
 
 /* touch behaviour */
@@ -175,7 +179,7 @@ a,button,summary{-webkit-tap-highlight-color:transparent}
   .btn-store:hover{border-color:var(--accent);color:var(--accent)}
   .gal-btn:hover{border-color:var(--accent);color:var(--accent)}
   footer a:hover{color:var(--text);text-decoration:underline}
-  footer .social a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+  .social a:hover{border-color:var(--accent);color:var(--accent)}
 }
 /* gallery arrows only where a mouse is the main input */
 .gal-ctrl{display:none;gap:8px;margin:-14px 0 18px}
@@ -344,6 +348,7 @@ def build(code):
           <li>{t('fact2')}</li>
           <li>{t('fact3')}</li>
         </ul>
+        <div class="follow"><span>{t('follow')}</span><div class="social">{SOCIAL_HTML}</div></div>
       </div>
       <div class="hero-art" aria-hidden="true">
         <div class="phone p1"><img src="{P}assets/shots/{code}/{dash:02d}.webp" alt="" width="720" height="1565"></div>
@@ -404,7 +409,7 @@ def build(code):
 
 <footer>
   <div class="wrap">
-    <div class="foot-left"><span>© 2026 IronLog</span><div class="social">{SOCIAL_HTML}</div></div>
+    <span>© 2026 IronLog</span>
     <ul>
       <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/">{t('foot_privacy')}</a></li>
       <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/terms.html">{t('foot_terms')}</a></li>
