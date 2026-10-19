@@ -26,6 +26,17 @@ def glyph_svg(name):
 
 
 APPLE_ICO, PLAY_ICO = glyph_svg("apple"), glyph_svg("google-play")
+
+# IronLog's own channels; shown as round logo buttons in the footer.
+SOCIALS = [
+    ("youtube", "YouTube", "https://www.youtube.com/@Ironlog.fitness"),
+    ("instagram", "Instagram", "https://www.instagram.com/ironlog.fit"),
+    ("tiktok", "TikTok", "https://www.tiktok.com/@ironlog.fit"),
+]
+SOCIAL_HTML = "".join(
+    f'<a href="{url}" target="_blank" rel="noopener" aria-label="IronLog on {label}">{glyph_svg(key)}</a>'
+    for key, label, url in SOCIALS
+)
 GLOBE = ('<svg class="globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" '
          'aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>')
 
@@ -143,6 +154,10 @@ footer{padding-block:34px calc(48px + env(safe-area-inset-bottom));color:var(--m
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
 footer ul{display:flex;flex-wrap:wrap;gap:0 18px;list-style:none;padding:0;margin:0}
 footer a{display:inline-block;padding:12px 4px;text-decoration:none}
+.foot-left{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+footer .social{display:flex;gap:8px}
+footer .social a{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:0;border:1px solid #3a444d;border-radius:50%;color:var(--text)}
+footer .social .ico{height:18px;width:auto}
 
 
 /* touch behaviour */
@@ -160,6 +175,7 @@ a,button,summary{-webkit-tap-highlight-color:transparent}
   .btn-store:hover{border-color:var(--accent);color:var(--accent)}
   .gal-btn:hover{border-color:var(--accent);color:var(--accent)}
   footer a:hover{color:var(--text);text-decoration:underline}
+  footer .social a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
 }
 /* gallery arrows only where a mouse is the main input */
 .gal-ctrl{display:none;gap:8px;margin:-14px 0 18px}
@@ -286,7 +302,7 @@ def build(code):
 <meta property="og:url" content="{page_url(code)}">
 <meta property="og:image" content="{SITE}/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<!-- Store logos: Font Awesome Free 5 Brands, CC BY 4.0 (https://fontawesome.com/license/free). Apple and Google Play are trademarks of their respective owners. -->
+<!-- Store logos: Font Awesome Free 5 Brands; YouTube, Instagram and TikTok logos: Font Awesome Free 6 Brands. CC BY 4.0 (https://fontawesome.com/license/free). Apple, Google Play, YouTube, Instagram and TikTok are trademarks of their respective owners. -->
 <script type="application/ld+json">{ld}</script>
 {redirect}
 <style>{CSS.replace('@@P@@', P)}</style>
@@ -388,7 +404,7 @@ def build(code):
 
 <footer>
   <div class="wrap">
-    <span>© 2026 IronLog</span>
+    <div class="foot-left"><span>© 2026 IronLog</span><div class="social">{SOCIAL_HTML}</div></div>
     <ul>
       <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/">{t('foot_privacy')}</a></li>
       <li><a href="https://ahmeddilshadshah.github.io/IRONLOG---PRIVACY/terms.html">{t('foot_terms')}</a></li>
