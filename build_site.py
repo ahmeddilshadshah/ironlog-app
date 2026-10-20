@@ -249,7 +249,7 @@ def build(code):
     def store_buttons(where):
         play = (f'<a class="btn btn-primary" href="{PLAY_URL}">{PLAY_ICO}<span><small>{t("store_get")}</small><b>Google Play</b></span></a>')
         if APP_STORE_LIVE:
-            apple = (f'<a class="btn btn-store" href="{APPLE_URL}" rel="noopener">{APPLE_ICO}<span><small>{t("store_dl")}</small><b>App Store</b></span></a>')
+            apple = (f'<a class="btn btn-primary" href="{APPLE_URL}" rel="noopener">{APPLE_ICO}<span><small>{t("store_dl")}</small><b>App Store</b></span></a>')
         else:
             apple = (f'<span class="btn btn-soon" role="note">{APPLE_ICO}<span><small>{t("store_soon")}</small><b>App Store</b></span></span>')
         return play, apple
