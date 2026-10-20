@@ -96,7 +96,7 @@ nav a.nav-cta{background:var(--accent);color:var(--accent-ink);font-weight:700;p
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,64px);align-items:center}
 .app-id{display:flex;align-items:center;gap:16px;margin:0 0 22px}
 .app-icon{border-radius:22.4%;box-shadow:0 10px 30px -8px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.06)}
-.app-id b{display:block;font-family:"Bebas Neue","Arial Narrow",Impact,sans-serif;font-weight:400;font-size:1.9rem;line-height:1;letter-spacing:.02em}
+.app-id b{display:block;font-family:"Bebas Neue","Arial Narrow",Impact,sans-serif;font-weight:400;font-size:clamp(1.5rem,5.6vw,1.9rem);line-height:1.05;letter-spacing:.02em;text-wrap:balance}
 .app-id span{color:var(--muted);font-size:.92rem}
 .get-head{display:flex;align-items:center;gap:18px;margin-bottom:12px}
 .get-head h2{margin:0}
@@ -336,7 +336,7 @@ def build(code):
   <div class="hero" id="top">
     <div class="wrap">
       <div>
-        <div class="app-id"><img class="app-icon" src="{P}assets/icon-384.png" alt="{t('icon_alt')}" width="84" height="84"><div><b>IronLog</b><span>{t('appid_sub')}</span></div></div>
+        <div class="app-id"><img class="app-icon" src="{P}assets/icon-384.png" alt="{t('icon_alt')}" width="84" height="84"><div><b>{t('title')}</b></div></div>
         <h1>{t('h1a')}<br><em>{t('h1b')}</em></h1>
         <p class="lede">{t('lede')}</p>
         <div class="cta">
