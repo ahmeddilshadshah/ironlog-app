@@ -9,7 +9,7 @@ HERE = Path(__file__).resolve().parent
 SITE = "https://ahmeddilshadshah.github.io/ironlog-app"
 PLAY_URL = "https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"
 APPLE_URL = "https://apps.apple.com/app/id6820042796"
-APP_STORE_LIVE = False
+APP_STORE_LIVE = True
 
 SCRIPT = {"en": "latin", "es": "latin", "fr": "latin", "pt": "latin", "de": "latin", "id": "latin", "tr": "latin",
           "ru": "cyr", "ar": "arab", "ur": "arab", "hi": "indic", "bn": "indic", "ja": "cjk", "ko": "cjk", "zh": "cjk"}
