@@ -243,7 +243,7 @@ def build(code):
     S, shots_dir = LANGS[code][0], HERE / "assets/shots" / code
     P = "" if code == "en" else "../"
     n_shots = len(glob.glob(str(shots_dir / "*.webp")))
-    dash, log = (1, 3) if n_shots == 7 else (3, 5)
+    dash, log = 1, 2  # home and log screen of the 1.0.1 set
     t = lambda k: E(S[k])
 
     def store_buttons(where):
@@ -266,7 +266,7 @@ def build(code):
         lang_items.append(f'<li><a href="{href}" lang="{LANGS[c][0]["html_lang"]}" hreflang="{LANGS[c][0]["html_lang"]}" data-lang="{c}"{cur}>{E(LANGS[c][0]["name"])}</a></li>')
 
     gallery = "\n".join(
-        f'      <li><div class="phone"><img src="{P}assets/shots/{code}/{i:02d}.webp" alt="{E(S["shot_alt"].format(n=i, total=n_shots))}" width="720" height="1565" loading="lazy" decoding="async"></div></li>'
+        f'      <li><div class="phone"><img src="{P}assets/shots/{code}/{i:02d}.webp" alt="{E(S["shot_alt"].format(n=i, total=n_shots))}" width="720" height="1280" loading="lazy" decoding="async"></div></li>'
         for i in range(1, n_shots + 1))
 
     features = "\n".join(f'        <li><h3>{t(f"f{i}h")}</h3><p>{t(f"f{i}p")}</p></li>' for i in range(1, 7))
@@ -351,8 +351,8 @@ def build(code):
         <div class="follow"><span>{t('follow')}</span><div class="social">{SOCIAL_HTML}</div></div>
       </div>
       <div class="hero-art" aria-hidden="true">
-        <div class="phone p1"><img src="{P}assets/shots/{code}/{dash:02d}.webp" alt="" width="720" height="1565"></div>
-        <div class="phone p2"><img src="{P}assets/shots/{code}/{log:02d}.webp" alt="" width="720" height="1565" fetchpriority="high"></div>
+        <div class="phone p1"><img src="{P}assets/shots/{code}/{dash:02d}.webp" alt="" width="720" height="1280"></div>
+        <div class="phone p2"><img src="{P}assets/shots/{code}/{log:02d}.webp" alt="" width="720" height="1280" fetchpriority="high"></div>
       </div>
     </div>
   </div>
