@@ -130,7 +130,7 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem)
 .sub{color:var(--muted);max-width:40em;margin:0 0 34px}
 
 /* gallery */
-.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;list-style:none;margin:-28px 0;padding:34px max(20px,calc((100% - 1120px) / 2 + 20px)) 52px;scroll-padding-inline:max(20px,calc((100% - 1120px) / 2 + 20px));scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%)}
+.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;list-style:none;margin:-54px 0;padding:60px max(20px,calc((100% - 1120px) / 2 + 20px)) 78px;scroll-padding-inline:max(20px,calc((100% - 1120px) / 2 + 20px));scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%)}
 .gallery li{flex:0 0 auto;width:min(66vw,270px);scroll-snap-align:start;list-style:none}
 .gallery .phone{border-radius:30px}
 
@@ -189,7 +189,12 @@ a,button,summary{-webkit-tap-highlight-color:transparent}
   .gallery li{position:relative}
   .gallery li:hover{z-index:3}
   .gallery .phone{transition:transform 240ms cubic-bezier(.23,1,.32,1),box-shadow 240ms ease}
-  .gallery li:hover .phone{transform:scale(1.1);box-shadow:0 40px 90px -20px rgba(0,0,0,.9),0 0 0 1px rgba(79,195,217,.5)}
+  .gallery li:hover .phone{transform:scale(1.2);box-shadow:0 44px 100px -20px rgba(0,0,0,.92),0 0 0 1px rgba(79,195,217,.55)}
+  /* the first and last screenshot grow inward so they are not cut off at the edge of the strip */
+  .gallery li:first-child .phone{transform-origin:left center}
+  .gallery li:last-child .phone{transform-origin:right center}
+  [dir=rtl] .gallery li:first-child .phone{transform-origin:right center}
+  [dir=rtl] .gallery li:last-child .phone{transform-origin:left center}
 }
 /* gallery arrows only where a mouse is the main input */
 .gal-ctrl{display:none;gap:8px;margin:-14px 0 18px}
