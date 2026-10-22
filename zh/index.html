@@ -190,7 +190,7 @@ a,button,summary{-webkit-tap-highlight-color:transparent}
   [dir=rtl] .gallery li:last-child .phone{transform-origin:left center}
 }
 /* gallery arrows only where a mouse is the main input */
-.gal-ctrl{display:none;gap:8px;margin:-14px 0 18px}
+.gal-ctrl{display:none;gap:8px;margin:-14px 0 18px;position:relative;z-index:5}   /* above the gallery's extra top padding, which overlaps it */
 @media (hover:hover) and (pointer:fine){.gal-ctrl{display:flex}}
 .gal-btn{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:transparent;color:var(--text);display:grid;place-items:center;cursor:pointer;padding:0}
 .gal-btn svg{width:20px;height:20px}
