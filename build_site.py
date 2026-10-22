@@ -10,6 +10,8 @@ SITE = "https://ahmeddilshadshah.github.io/ironlog-app"
 PLAY_URL = "https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"
 APPLE_URL = "https://apps.apple.com/app/id6820042796"
 APP_STORE_LIVE = True
+VIDEO_ID = "cm-5GmBzkvA"      # our YouTube video, shown in the "Watch the video" section (starts at 4:48)
+VIDEO_START = 288
 
 SCRIPT = {"en": "latin", "es": "latin", "fr": "latin", "pt": "latin", "de": "latin", "id": "latin", "tr": "latin",
           "ru": "cyr", "ar": "arab", "ur": "arab", "hi": "indic", "bn": "indic", "ja": "cjk", "ko": "cjk", "zh": "cjk"}
@@ -132,6 +134,10 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem)
 .gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;list-style:none;margin:0;padding:6px max(20px,calc((100% - 1120px) / 2 + 20px)) 24px;scroll-padding-inline:max(20px,calc((100% - 1120px) / 2 + 20px));scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%)}
 .gallery li{flex:0 0 auto;width:min(66vw,270px);scroll-snap-align:start;list-style:none}
 .gallery .phone{border-radius:30px}
+
+/* video */
+.video-frame{position:relative;aspect-ratio:16/9;max-width:960px;border-radius:20px;overflow:hidden;border:1px solid var(--line);background:#000;box-shadow:0 30px 80px -24px rgba(0,0,0,.75)}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* features */
 .features{display:grid;grid-template-columns:repeat(2,1fr);gap:0 clamp(28px,6vw,80px);list-style:none;padding:0;margin:0}
@@ -369,6 +375,14 @@ def build(code):
     <ul class="gallery" tabindex="0" aria-label="{t('gallery_label')}">
 {gallery}
     </ul>
+  </section>
+
+  <section id="video" aria-labelledby="video-h">
+    <div class="wrap">
+      <h2 id="video-h">{t('video_h')}</h2>
+      <p class="sub">{t('video_sub')}</p>
+      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/{VIDEO_ID}?start={VIDEO_START}&amp;rel=0" title="{t('video_title')}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
   </section>
 
   <section id="features" aria-labelledby="features-h">
