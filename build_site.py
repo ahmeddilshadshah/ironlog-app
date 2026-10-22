@@ -10,8 +10,7 @@ SITE = "https://ahmeddilshadshah.github.io/ironlog-app"
 PLAY_URL = "https://play.google.com/store/apps/details?id=com.ahmeddilshadshah.ironlog"
 APPLE_URL = "https://apps.apple.com/app/id6820042796"
 APP_STORE_LIVE = True
-VIDEO_ID = "cm-5GmBzkvA"      # our YouTube video, shown in the "Watch the video" section (starts at 4:48)
-VIDEO_START = 288
+VIDEO_ID = "cm-5GmBzkvA"      # our YouTube video, shown in the "Watch the video" section; plays from the very start
 
 SCRIPT = {"en": "latin", "es": "latin", "fr": "latin", "pt": "latin", "de": "latin", "id": "latin", "tr": "latin",
           "ru": "cyr", "ar": "arab", "ur": "arab", "hi": "indic", "bn": "indic", "ja": "cjk", "ko": "cjk", "zh": "cjk"}
@@ -381,7 +380,7 @@ def build(code):
     <div class="wrap">
       <h2 id="video-h">{t('video_h')}</h2>
       <p class="sub">{t('video_sub')}</p>
-      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/{VIDEO_ID}?start={VIDEO_START}&amp;rel=0" title="{t('video_title')}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/{VIDEO_ID}?rel=0" title="{t('video_title')}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </div>
   </section>
 
