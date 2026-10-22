@@ -130,7 +130,7 @@ h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,5vw,3.6rem)
 .sub{color:var(--muted);max-width:40em;margin:0 0 34px}
 
 /* gallery */
-.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;list-style:none;margin:0;padding:6px max(20px,calc((100% - 1120px) / 2 + 20px)) 24px;scroll-padding-inline:max(20px,calc((100% - 1120px) / 2 + 20px));scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%)}
+.gallery{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;list-style:none;margin:-28px 0;padding:34px max(20px,calc((100% - 1120px) / 2 + 20px)) 52px;scroll-padding-inline:max(20px,calc((100% - 1120px) / 2 + 20px));scrollbar-color:var(--line) transparent;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 22px,#000 calc(100% - 22px),transparent 100%)}
 .gallery li{flex:0 0 auto;width:min(66vw,270px);scroll-snap-align:start;list-style:none}
 .gallery .phone{border-radius:30px}
 
@@ -185,6 +185,11 @@ a,button,summary{-webkit-tap-highlight-color:transparent}
   .gal-btn:hover{border-color:var(--accent);color:var(--accent)}
   footer a:hover{color:var(--text);text-decoration:underline}
   .social a:hover{border-color:var(--accent);color:var(--accent)}
+  /* screenshots zoom a little under the mouse; touch screens are unchanged */
+  .gallery li{position:relative}
+  .gallery li:hover{z-index:3}
+  .gallery .phone{transition:transform 240ms cubic-bezier(.23,1,.32,1),box-shadow 240ms ease}
+  .gallery li:hover .phone{transform:scale(1.1);box-shadow:0 40px 90px -20px rgba(0,0,0,.9),0 0 0 1px rgba(79,195,217,.5)}
 }
 /* gallery arrows only where a mouse is the main input */
 .gal-ctrl{display:none;gap:8px;margin:-14px 0 18px}
@@ -200,7 +205,7 @@ a,button,summary{-webkit-tap-highlight-color:transparent}
 @keyframes menu-fade{from{opacity:0}}
 p.lede,p.sub,.features p{text-wrap:pretty}
 @media (prefers-reduced-motion:reduce){
-  .btn,nav a.nav-cta,.gal-btn,.lang summary{transition:none}
+  .btn,nav a.nav-cta,.gal-btn,.lang summary,.gallery .phone{transition:none}
   .lang[open] ul{animation-name:menu-fade}
 }
 
